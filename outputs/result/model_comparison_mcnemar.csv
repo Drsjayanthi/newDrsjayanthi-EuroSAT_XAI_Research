@@ -1,0 +1,16 @@
+model_a,model_b,a_only_correct,b_only_correct,p_value,p_holm
+resnet18_seed42,resnet18_seed43,17,21,0.6271025701571489,1.0
+resnet18_seed42,resnet18_seed44,13,19,0.37708558747544885,1.0
+resnet18_seed42,efficientnet_b0_seed42,12,26,0.03355243967962451,0.40262927615549415
+resnet18_seed42,efficientnet_b0_seed43,9,22,0.029449373483657837,0.3828418552875519
+resnet18_seed42,efficientnet_b0_seed44,22,20,0.8776143287523154,1.0
+resnet18_seed43,resnet18_seed44,9,11,0.8238029479980469,1.0
+resnet18_seed43,efficientnet_b0_seed42,15,25,0.1538599441628321,1.0
+resnet18_seed43,efficientnet_b0_seed43,12,21,0.16275565745308995,1.0
+resnet18_seed43,efficientnet_b0_seed44,27,21,0.470879013621712,1.0
+resnet18_seed44,efficientnet_b0_seed42,14,22,0.24298495403490966,1.0
+resnet18_seed44,efficientnet_b0_seed43,13,20,0.296206368599087,1.0
+resnet18_seed44,efficientnet_b0_seed44,26,18,0.2912152365458951,1.0
+efficientnet_b0_seed42,efficientnet_b0_seed43,13,12,1.0,1.0
+efficientnet_b0_seed42,efficientnet_b0_seed44,28,12,0.01658900337497471,0.24883505062462064
+efficientnet_b0_seed43,efficientnet_b0_seed44,27,12,0.023702702470473014,0.3318378345866222

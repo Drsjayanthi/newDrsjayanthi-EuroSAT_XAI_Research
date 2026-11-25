@@ -1,0 +1,23 @@
+check,status,detail
+dataset_composition,PASS,27000 images; class counts match the published EuroSAT composition
+image_integrity,PASS,0 unreadable files; 0 images not 64x64 RGB
+exact_duplicates_contained,PASS,0 exact-duplicate groups; 0 span more than one partition
+label_conflicts,PASS,0 duplicate groups carry more than one class label (see stage_2_mixed_label_groups.csv)
+partition_disjointness,PASS,"0 path/group overlaps between train, validation and test"
+class_stratification,PASS,"per-class validation/test share ranges 0.142-0.143 (tolerance (0.1, 0.19))"
+near_duplicate_review,WARN,no near-duplicate review sheet: only exact duplicates were controlled
+geographic_independence,WARN,no geographic/source identifiers: spatial independence between train and test is NOT established; accuracy may be optimistic for unseen regions (limit claims accordingly)
+test_set_isolation,PASS,6 runs: checkpoints and temperature fixed on validation before the single test evaluation
+training_seeds,PASS,3 training seed(s); between-run variability reported
+model_comparison_tests,INFO,"15 pairwise exact McNemar tests, Holm-adjusted; 0 with p_holm < 0.05"
+xai_sample_size,PASS,"images explained per method: {'resnet18_gradcam': 134, 'resnet18_ig': 134} (target >= 100)"
+xai_beats_random_order,WARN,"not distinguishable from random order under: ['resnet18_gradcam/zero', 'resnet18_gradcam/blur', 'resnet18_ig/zero', 'resnet18_ig/blur']"
+xai_baseline_sensitivity,WARN,"direction changes with the baseline for: ['resnet18_gradcam', 'resnet18_ig']"
+xai_parameter_randomisation,PASS,"mean rho after full randomisation {'resnet18_gradcam': 0.14, 'resnet18_ig': 0.265} (threshold |rho| <= 0.5)"
+xai_transformation_stability,INFO,"{'resnet18_gradcam': {'gauss_noise': 0.431, 'hflip': 0.843, 'rot90': 0.784, 'vflip': 0.796}, 'resnet18_ig': {'gauss_noise': 0.287, 'hflip': 0.438, 'rot90': 0.394, 'vflip': 0.411}}"
+training_convergence,PASS,resnet18/42: best epoch 22/25; resnet18/43: best epoch 23/25; resnet18/44: best epoch 22/25; efficientnet_b0/42: best epoch 22/25; efficientnet_b0/43: best epoch 24/25; efficientnet_b0/44: best epoch 12/17
+robustness_severity,INFO,"accuracy under mild pixel-level degradation {'resnet18': {'gauss_noise_0.01': 0.856, 'blur_r0.5': 0.979, 'jpeg_q75': 0.656}, 'efficientnet_b0': {'gauss_noise_0.01': 0.883, 'blur_r0.5': 0.985, 'jpeg_q75': 0.606}}; report as a robustness limitation of 64 px EuroSAT classifiers"
+confidence_intervals_reported,PASS,group-cluster bootstrap CIs and paired model differences in table_test_ci.csv
+confidence_interval_scope,INFO,"confidence intervals are duplicate-group cluster bootstraps over test images, not spatial; report accordingly"
+figures_600dpi,PASS,"21 PNG figures at 600 dpi, vector PDFs with embedded fonts"
+reproducibility_record,PASS,"seeds, hyper-parameters, split hashes and package versions recorded"

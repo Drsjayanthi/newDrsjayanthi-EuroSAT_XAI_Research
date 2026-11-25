@@ -1,0 +1,38 @@
+
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# EuroSAT dataset - DO NOT UPLOAD
+data/
+datasets/
+EuroSAT-RGB/
+
+# Model checkpoints - DO NOT UPLOAD
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Temporary files
+*.tmp
+*.log
+*.cache
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Editor files
+.vscode/
+.idea/

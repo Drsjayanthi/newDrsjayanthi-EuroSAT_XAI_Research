@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+scipy
+Pillow
+torch
+torchvision
+captum
+grad-cam
+ipykernel
+jupyter
